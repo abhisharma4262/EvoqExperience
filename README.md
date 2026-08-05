@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EVOQ Experience Center
 
-## Getting Started
+Experiential marketing site for **EVOQ**, the execution runtime for the agentic enterprise.
 
-First, run the development server:
+## Stack
+
+- Next.js 15 App Router
+- React 19
+- TypeScript (strict)
+- Tailwind CSS v4
+
+No deployment-specific config. Run on any Node host with `npm run build` + `npm start`.
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production-style run
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Editing copy (non-technical)
 
-To learn more about Next.js, take a look at the following resources:
+All user-facing copy lives in typed files under [`/content`](./content):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| File | What it controls |
+|---|---|
+| `content/home.ts` | Homepage narrative: industry → challenge → EVOQ → stories → close |
+| `content/orbits.ts` | Create / Transform / Operate questions, scenarios, doorways |
+| `content/caseStudies.ts` | Client stories (masked) mapped to Create / Transform / Operate |
+| `content/rooms.ts` | Room moments, outcomes, quotes |
+| `content/offerings.ts` | Flagships + sibling offerings (add/remove freely) |
+| `content/metrics.ts` | Outcome metrics |
+| `content/navigation.ts` | Header / footer / journey labels |
+| `content/forms.ts` | Lead modal copy |
+| `content/runtimePage.ts` | `/runtime` deep-dive |
+| `content/brand.ts` | Color, type, space, motion tokens |
+| `content/coordinationMesh.ts` | Signature runtime mesh labels & satellites |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Do not put marketing copy inside React components.
 
-## Deploy on Vercel
+## Adding images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Drop files into `public/assets/...` (see [`public/assets/README.md`](./public/assets/README.md)).
+2. Set the matching `src` field in the relevant `/content` file.
+3. If `src` is empty, the UI shows an elegant placeholder automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Local development |
+| `npm run build` | Production build |
+| `npm start` | Serve production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript |
+| `npm run check:contrast` | WCAG AA brand pair check |
+| `npm run test:e2e` | Playwright smoke (requires browsers + build) |
+
+## Site map
+
+- `/`: film home (includes Client stories)
+- `/create`, `/transform`, `/operate`: Rooms (intercepted from the film; cold-loadable)
+- `/runtime`: investor / technical deep-dive
+- `/proof`: redirects to home Client stories
+- `/legal/privacy`, `/legal/terms`: stubs
+
+## Lead capture
+
+`POST /api/lead` validates the payload and logs it to the server console. Wire a CRM or email webhook later without changing the form UI.
