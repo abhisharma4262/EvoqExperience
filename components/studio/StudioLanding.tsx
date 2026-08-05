@@ -64,7 +64,7 @@ export function StudioLanding() {
     return () => window.clearInterval(id);
   }, []);
 
-  const primaryHref = signedIn ? "/studio/workspace" : "/studio/login";
+  const primaryHref = signedIn ? "/studio/brief" : "/studio/login?next=/studio/brief";
   const auroraHref = signedIn
     ? "/studio/workspace?project=aurora-direct"
     : "/studio/login?next=/studio/workspace&project=aurora-direct";

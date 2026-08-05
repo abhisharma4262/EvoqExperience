@@ -51,7 +51,6 @@ export function StudioBrand({
         className="!max-w-none h-8 w-full sm:h-9"
       />
       <span className="studio-brand__studio" aria-hidden>
-        <span className="studio-brand__flare" />
         <span className="studio-brand__studio-text">
           {STUDIO_LETTERS.map((letter) => (
             <span key={letter}>{letter}</span>

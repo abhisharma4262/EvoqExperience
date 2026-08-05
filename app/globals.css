@@ -1064,7 +1064,6 @@ button.aurora-glass__chip:hover {
   display: flex;
   width: 100%;
   align-items: center;
-  gap: 0.35rem;
   animation: studio-brand-float 4.2s ease-in-out infinite;
 }
 
@@ -1094,22 +1093,6 @@ button.aurora-glass__chip:hover {
 
 .studio-brand__studio-text > span {
   display: inline-block;
-}
-
-.studio-brand__flare {
-  position: relative;
-  left: auto;
-  top: auto;
-  flex-shrink: 0;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 999px;
-  background: var(--studio-accent);
-  box-shadow:
-    0 0 10px color-mix(in srgb, var(--studio-accent) 75%, transparent),
-    0 0 18px color-mix(in srgb, var(--studio-accent) 40%, transparent);
-  transform: none;
-  animation: studio-brand-flare 2.8s ease-in-out infinite;
 }
 
 .studio-brand:hover .studio-brand__studio {
@@ -1386,18 +1369,6 @@ button.aurora-glass__chip:hover {
   }
 }
 
-@keyframes studio-brand-flare {
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: scale(0.85);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.15);
-  }
-}
-
 @keyframes studio-grid-drift {
   from {
     background-position: 0 0;
@@ -1509,7 +1480,6 @@ button.aurora-glass__chip:hover {
   .studio-landing__glow--b,
   .studio-brand__studio,
   .studio-brand__studio-text,
-  .studio-brand__flare,
   .studio-orbit__ring--outer,
   .studio-orbit__ring--mid,
   .studio-orbit__core,

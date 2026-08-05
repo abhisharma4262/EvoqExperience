@@ -33,6 +33,11 @@ import {
   X,
 } from "lucide-react";
 import { studio } from "@/content/studio";
+import {
+  buildBriefPrompt,
+  buildBriefSubtitle,
+  resolveBriefAppName,
+} from "@/content/studioBrief";
 import { BookingAppPreview } from "@/components/studio/BookingAppPreview";
 import { StudioBrand } from "@/components/studio/StudioBrand";
 import { StudioThemeToggle } from "@/components/studio/StudioThemeToggle";
@@ -41,6 +46,7 @@ import {
   readStudioSession,
   type StudioSession,
 } from "@/lib/studio-auth";
+import { clearStudioBrief, readStudioBrief } from "@/lib/studio-brief";
 import { cn } from "@/lib/cn";
 import { prefersReducedMotion } from "@/lib/motion";
 
@@ -92,6 +98,10 @@ export function StudioWorkspace() {
   const [view, setView] = useState<ViewMode>("preview");
   const [device, setDevice] = useState<Device>("desktop");
   const [prompt, setPrompt] = useState("");
+  const [blankTitle, setBlankTitle] = useState("Untitled application");
+  const [blankSubtitle, setBlankSubtitle] = useState(
+    "Blank canvas — describe what to build",
+  );
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [building, setBuilding] = useState(false);
   const [agentStep, setAgentStep] = useState(-1);
@@ -119,6 +129,17 @@ export function StudioWorkspace() {
       return;
     }
     setSession(current);
+
+    const isAurora = searchParams.get("project") === "aurora-direct";
+    if (!isAurora) {
+      const brief = readStudioBrief();
+      if (brief) {
+        setBlankTitle(resolveBriefAppName(brief));
+        setBlankSubtitle(buildBriefSubtitle(brief));
+        setPrompt(buildBriefPrompt(brief));
+      }
+    }
+
     setReady(true);
   }, [router, searchParams]);
 
@@ -145,9 +166,12 @@ export function StudioWorkspace() {
   }, [router]);
 
   const startBlank = useCallback(() => {
+    clearStudioBrief();
     setProjectOpen(false);
     setMessages([]);
     setPrompt("");
+    setBlankTitle("Untitled application");
+    setBlankSubtitle("Blank canvas — describe what to build");
     setPreviewVariant("default");
     setView("preview");
     router.replace("/studio/workspace");
@@ -442,7 +466,7 @@ export function StudioWorkspace() {
               <p className="truncate text-sm font-medium text-[var(--studio-text)]">
                 {projectOpen
                   ? studio.sampleProject.name
-                  : "Untitled application"}
+                  : blankTitle}
               </p>
               {projectOpen ? (
                 <span className="shrink-0 rounded-full bg-[var(--studio-accent-soft)] px-2 py-0.5 text-[10px] font-medium text-[var(--studio-accent-bright)]">
@@ -453,7 +477,7 @@ export function StudioWorkspace() {
             <p className="truncate text-[11px] text-[var(--studio-subtle)]">
               {projectOpen
                 ? `${studio.sampleProject.exampleLabel} · ${studio.sampleProject.stack.join(" · ")}`
-                : "Blank canvas — describe what to build"}
+                : blankSubtitle}
             </p>
           </div>
 
