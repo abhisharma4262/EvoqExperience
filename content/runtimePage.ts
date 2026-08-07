@@ -1,7 +1,7 @@
 export const runtimePage = {
-  title: "How EVOQ works",
+  title: "How execution works",
   subtitle:
-    "EVOQ is an operating layer for enterprise execution, connecting intent, context, engineering, reuse, and governance so people and agents can run work together.",
+    "Evoq is an Enterprise Execution Platform — making enterprise knowledge executable so intent and context become governed action across people, agents, and systems.",
   sections: [
     {
       id: "intent",
@@ -11,7 +11,7 @@ export const runtimePage = {
     {
       id: "context",
       title: "Context",
-      body: "Enterprise context (systems, data, policies, and roles) stays attached to every action.",
+      body: "Enterprise knowledge — systems, data, policies, and roles — stays attached to every action.",
     },
     {
       id: "engineering",
@@ -21,7 +21,7 @@ export const runtimePage = {
     {
       id: "reuse",
       title: "Reuse",
-      body: "Every engagement leaves patterns behind. The next one starts smarter.",
+      body: "Every execution leaves patterns behind. The next one starts smarter.",
     },
     {
       id: "governance",

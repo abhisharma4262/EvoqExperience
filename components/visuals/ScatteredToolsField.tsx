@@ -266,10 +266,10 @@ export function ScatteredToolsField() {
     >
       <div className="scattered-tools__haze" />
       <div className="scattered-tools__ghost-console">
-        <span className="scattered-tools__ghost-label">ai stack</span>
-        <span className="scattered-tools__ghost-line">tools multiplying…</span>
-        <span className="scattered-tools__ghost-line">no shared runtime</span>
-        <span className="scattered-tools__ghost-line">execution still manual</span>
+        <span className="scattered-tools__ghost-label">intelligence</span>
+        <span className="scattered-tools__ghost-line">models multiplying…</span>
+        <span className="scattered-tools__ghost-line">execution fragmented</span>
+        <span className="scattered-tools__ghost-line">knowledge still tribal</span>
       </div>
 
       {FRAGMENTS.map((item) => (

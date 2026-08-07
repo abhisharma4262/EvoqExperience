@@ -4,11 +4,17 @@ test.describe("EVOQ experience center smoke", () => {
   test("homepage narrative and rooms open/close", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(
+      page.getByRole("heading", {
+        level: 1,
+        name: "AI is changing how enterprises operate.",
+      }),
+    ).toBeVisible();
 
     const sections = [
       "section-industry",
       "section-challenge",
+      "section-work",
       "section-evoq",
       "section-modes",
       "section-compounding",
@@ -48,7 +54,7 @@ test.describe("EVOQ experience center smoke", () => {
 
     await page.goto("/runtime");
     await expect(
-      page.getByRole("heading", { name: "How EVOQ works" }),
+      page.getByRole("heading", { name: "How execution works" }),
     ).toBeVisible();
   });
 });

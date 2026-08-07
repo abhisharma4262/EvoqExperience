@@ -20,7 +20,6 @@ import {
 type FilmContextValue = {
   activeAct: ActId;
   activeSection: SectionId;
-  headerVisible: boolean;
   setActiveSection: (section: SectionId) => void;
   scrollToSection: (section: SectionId) => void;
   scrollToAct: (act: ActId) => void;
@@ -30,7 +29,6 @@ const FilmContext = createContext<FilmContextValue | null>(null);
 
 export function FilmProvider({ children }: { children: ReactNode }) {
   const [activeSection, setActiveSection] = useState<SectionId>("industry");
-  const [headerVisible, setHeaderVisible] = useState(false);
   const pathname = usePathname();
 
   const activeAct = useMemo(() => {
@@ -79,9 +77,7 @@ export function FilmProvider({ children }: { children: ReactNode }) {
           ([, id]) => id === top.target.id,
         );
         if (entry) {
-          const section = entry[0] as SectionId;
-          setActiveSection(section);
-          setHeaderVisible(section !== "industry");
+          setActiveSection(entry[0] as SectionId);
         }
       },
       { threshold: [0.35, 0.55], rootMargin: "-10% 0px -35% 0px" },
@@ -99,12 +95,11 @@ export function FilmProvider({ children }: { children: ReactNode }) {
     () => ({
       activeAct,
       activeSection,
-      headerVisible,
       setActiveSection,
       scrollToSection,
       scrollToAct,
     }),
-    [activeAct, activeSection, headerVisible, scrollToSection, scrollToAct],
+    [activeAct, activeSection, scrollToSection, scrollToAct],
   );
 
   return <FilmContext.Provider value={value}>{children}</FilmContext.Provider>;

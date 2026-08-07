@@ -20,11 +20,11 @@ export const orbits: OrbitContent[] = [
     mode: "create",
     label: "Create",
     line: "Build what comes next",
-    question: "What if the next product launch didn’t need a project plan?",
+    question: "What if the next capability didn’t wait on a project plan?",
     scenario: {
       lines: [
         "Monday, 9:14 AM. A Chief Digital Officer asks for a direct booking channel that can compete with the OTAs.",
-        "By Friday, it’s in production, with governance attached to every step.",
+        "By Friday, it’s in production, with enterprise context and governance attached to every step.",
       ],
       visual: {
         alt: "Create mode: product build console",
@@ -38,12 +38,12 @@ export const orbits: OrbitContent[] = [
   {
     mode: "transform",
     label: "Transform",
-    line: "Modernize what already runs",
-    question: "What if a two-month assessment was done before lunch?",
+    line: "Modernise what already exists",
+    question: "What if modernisation reused what the enterprise already knows?",
     scenario: {
       lines: [
         "A retail bank’s Salesforce assessment used to take two months.",
-        "With EVOQ, it takes eight hours, and the map is more accurate than the last consulting cycle.",
+        "With Evoq, it takes eight hours, and the map carries institutional context the last consulting cycle missed.",
       ],
       visual: {
         alt: "Transform mode: modernization assessment console",
@@ -57,12 +57,12 @@ export const orbits: OrbitContent[] = [
   {
     mode: "operate",
     label: "Operate",
-    line: "Run what can’t fail",
+    line: "Operate what is critical",
     question: "What if operations improved while they ran?",
     scenario: {
       lines: [
         "A P&C insurer opens Monday to find weekend claims volume already triaged, routed, and, where policy allowed, settled.",
-        "No pager storm. Every action explainable.",
+        "No pager storm. Every action is explainable and grounded in how the enterprise actually works.",
       ],
       visual: {
         alt: "Operate mode: autonomous operations console",

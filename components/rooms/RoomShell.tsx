@@ -8,6 +8,7 @@ import { rooms } from "@/content/rooms";
 import { getOrbit } from "@/content/orbits";
 import { navigation } from "@/content/navigation";
 import type { ModeId } from "@/content/offerings";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 import { Button } from "@/components/ui/Button";
 import { RuntimeConsole } from "@/components/visuals/RuntimeConsole";
 import { SidecarStrip } from "@/components/rooms/SidecarStrip";
@@ -87,11 +88,14 @@ export function RoomShell({
     >
       <div className="film-container space-y-14 py-14">
         <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-sm uppercase tracking-[0.18em] text-text-secondary">
-              {room.title}
-            </p>
-            <p className="mt-1 text-sm text-accent-alt">{orbit.line}</p>
+          <div className="flex items-center gap-5">
+            <BrandLogo href="/" surface="light" compact priority />
+            <div>
+              <p className="text-sm uppercase tracking-[0.18em] text-text-secondary">
+                {room.title}
+              </p>
+              <p className="mt-1 text-sm text-accent-alt">{orbit.line}</p>
+            </div>
           </div>
           {variant === "page" ? (
             <Button asChild variant="ghost">

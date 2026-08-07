@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EVOQ: From AI pilots to coordinated execution",
+  title: "Evoq: Enterprise Execution Platform",
   description:
-    "EVOQ helps enterprises move from isolated AI pilots to coordinated execution that runs, learns, and improves, across Create, Transform, and Operate.",
+    "AI is changing how enterprises operate. Evoq makes enterprise knowledge executable, turning intent and context into governed action across build, modernise, and operate.",
   openGraph: {
-    title: "EVOQ: Experience Center",
+    title: "Evoq: Enterprise Execution Platform",
     description:
-      "From AI pilots to coordinated execution. An experience center for enterprise leaders and investors.",
+      "AI is changing how enterprises operate. Evoq makes enterprise knowledge executable so work gets done.",
     type: "website",
   },
   robots: {

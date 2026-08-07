@@ -1,8 +1,8 @@
 export const brand = {
   name: "EVOQ",
-  tagline: "The execution runtime for the agentic enterprise.",
+  tagline: "The Enterprise Execution Platform.",
   positioning:
-    "One execution system. Three modes of business reinvention.",
+    "Makes enterprise knowledge executable across build, modernise, and operate.",
   /** Wordmark assets — use `light` on light UIs, `dark` on dark UIs. */
   logos: {
     /** Dark teal letters + green Q tail — for light backgrounds */
