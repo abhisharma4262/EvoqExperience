@@ -67,31 +67,59 @@ export function SectionModes() {
             </Reveal>
 
             <Reveal delayMs={200}>
-              <nav
-                className="mt-10 flex flex-wrap gap-2.5"
-                aria-label="Execution entry points"
-              >
-                {orbits.map((item) => {
-                  const selected = item.mode === active;
-                  return (
-                    <Link
-                      key={item.mode}
-                      href={item.href}
-                      scroll={false}
-                      className={cn(
-                        "rounded-full px-5 py-2.5 text-sm font-medium transition-colors",
-                        selected
-                          ? "bg-dark-bg text-white"
-                          : "bg-white/70 text-text-secondary ring-1 ring-accent-alt/15 hover:text-text-primary",
-                      )}
-                      onMouseEnter={() => previewMode(item.mode)}
-                      onFocus={() => previewMode(item.mode)}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </nav>
+              <div className="mt-10">
+                <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-text-muted">
+                  Step inside to experience it
+                </p>
+                <nav
+                  className="mt-4 flex flex-col gap-2.5 sm:max-w-sm"
+                  aria-label="Execution entry points"
+                >
+                  {orbits.map((item) => {
+                    const selected = item.mode === active;
+                    return (
+                      <Link
+                        key={item.mode}
+                        href={item.href}
+                        scroll={false}
+                        className={cn(
+                          "group flex items-center justify-between gap-4 rounded-2xl px-5 py-3.5 transition-all duration-300",
+                          selected
+                            ? "bg-dark-bg text-white shadow-[0_12px_28px_rgba(12,34,38,0.14)]"
+                            : "bg-white/75 text-text-secondary ring-1 ring-accent-alt/12 hover:bg-white hover:text-text-primary hover:shadow-[0_10px_24px_rgba(12,34,38,0.06)] hover:ring-accent-alt/25",
+                        )}
+                        onMouseEnter={() => previewMode(item.mode)}
+                        onFocus={() => previewMode(item.mode)}
+                      >
+                        <span className="min-w-0">
+                          <span className="block text-[0.95rem] font-semibold tracking-tight">
+                            {item.label}
+                          </span>
+                          <span
+                            className={cn(
+                              "mt-0.5 block text-[0.78rem] leading-snug",
+                              selected ? "text-white/65" : "text-text-muted",
+                            )}
+                          >
+                            {item.line}
+                          </span>
+                        </span>
+                        <span
+                          className={cn(
+                            "flex h-8 w-8 flex-none items-center justify-center rounded-full text-base transition-transform duration-300 group-hover:translate-x-0.5",
+                            selected
+                              ? "bg-white/12 text-white"
+                              : "bg-accent/10 text-accent-alt",
+                          )}
+                          aria-hidden
+                        >
+                          →
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </nav>
+              </div>
             </Reveal>
           </div>
 

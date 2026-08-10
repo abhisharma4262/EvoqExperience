@@ -22,10 +22,9 @@ export function SectionIndustry() {
         </Reveal>
         <Reveal delayMs={90}>
           <p className="mt-8 max-w-2xl text-lg text-text-secondary md:text-xl">
-            That&apos;s only part of the story. The bigger shift isn&apos;t better
-            software. It&apos;s how{" "}
-            <span className="word-mark">work</span> runs across the{" "}
-            <span className="word-mark">enterprise</span>.
+            What technology makes possible is expanding faster than organizations
+            can make it real. Closing that distance is the{" "}
+            <span className="word-mark">new frontier</span>.
           </p>
         </Reveal>
       </div>

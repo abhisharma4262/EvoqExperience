@@ -310,7 +310,12 @@ export function ModesEngineFilm({
                 <ModeIcon kind={mode.icon} />
               </span>
               <div className="modes-film__mode-copy">
-                <p className="modes-film__mode-label">{mode.label}</p>
+                <p className="modes-film__mode-label">
+                  {mode.label}
+                  <span className="modes-film__mode-go" aria-hidden>
+                    →
+                  </span>
+                </p>
                 <p className="modes-film__mode-line">{mode.line}</p>
               </div>
             </Link>

@@ -6,7 +6,6 @@ export type SectionId =
   | "evoq"
   | "modes"
   | "compounding"
-  | "stories"
   | "close";
 
 export type Act = {
@@ -43,7 +42,7 @@ export const acts: Act[] = [
     id: 4,
     label: "Next",
     shortLabel: "Next",
-    sectionIds: ["compounding", "stories", "close"],
+    sectionIds: ["compounding", "close"],
     anchorId: "story-next",
   },
 ];
@@ -55,7 +54,6 @@ export const sectionToAct: Record<SectionId, ActId> = {
   evoq: 3,
   modes: 3,
   compounding: 4,
-  stories: 4,
   close: 4,
 };
 
@@ -66,6 +64,5 @@ export const sectionAnchors: Record<SectionId, string> = {
   evoq: "section-evoq",
   modes: "section-modes",
   compounding: "section-compounding",
-  stories: "section-stories",
   close: "section-close",
 };

@@ -7,7 +7,7 @@ test.describe("EVOQ experience center smoke", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "AI is changing how enterprises operate.",
+        name: "Enterprises now operate in an age of abundant intelligence.",
       }),
     ).toBeVisible();
 
@@ -18,7 +18,6 @@ test.describe("EVOQ experience center smoke", () => {
       "section-evoq",
       "section-modes",
       "section-compounding",
-      "section-stories",
       "section-close",
     ];
 

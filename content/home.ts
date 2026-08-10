@@ -1,38 +1,29 @@
 export const home = {
   industry: {
     id: "industry",
-    title: "AI is changing how enterprises operate.",
-    body: "That’s only part of the story. The bigger shift isn’t better software. It’s how work runs across the enterprise.",
+    title: "Enterprises now operate in an age of abundant intelligence.",
+    body: "What technology makes possible is expanding faster than organizations can make it real. Closing that distance is the new frontier.",
   },
   challenge: {
     id: "challenge",
-    eyebrow: "The real constraint",
-    title: "The challenge is no longer intelligence. It’s execution.",
-    body: "Intelligence is becoming widely available. Execution remains fragmented across people, systems, teams, decisions, and the institutional knowledge trapped in people’s heads.",
-    points: [
-      "Pilots that never become how work runs",
-      "Handoffs that drop context between business and engineering",
-      "Knowledge that stays tribal while tools multiply",
-    ],
-    close: "The bottleneck isn’t generating intelligence. It’s turning it into work that gets done.",
+    eyebrow: "The Value Gap",
+    title: "The value of AI is increasingly determined by execution",
+    body: "Across business and engineering, AI is accelerating individual moments of work. Execution drives that into outcomes the enterprise can sustain and scale.",
   },
   work: {
     id: "work",
-    eyebrow: "What’s actually shifting",
-    title: "What’s shifting is how work gets done.",
-    body: "Decades of applications, cloud, data, and automation digitised processes. They didn’t fundamentally change how work runs. People still coordinate systems, make decisions, and carry enterprise knowledge in their heads.",
-    close: "Business reinvention and engineering delivery are not separate problems. They are one continuous execution challenge.",
+    eyebrow: "The Deeper Shift",
+    title: "Execution demands a new way of working.",
+    body: "Digital apps, cloud, data, and automation transformed enterprises. Yet the context connecting systems, decisions, and outcomes still lives largely in people.",
   },
   evoq: {
     id: "evoq",
-    eyebrow: "What enterprises will need",
+    eyebrow: "What enterprises need",
     needTitle:
-      "Enterprises need to combine their knowledge with AI to build a harness which works for them.",
-    needBody:
-      "AI brings intelligence. The enterprise brings the knowledge of how work actually gets done. A harness is what binds the two, so intelligence doesn’t float above the organisation, it runs through it.",
+      "Continuous execution system grounded in enterprise knowledge built on a robust enterprise harness",
     title: "Evoq makes enterprise knowledge executable.",
     category: "Enterprise Execution Platform",
-    body: "Not another AI tool. Evoq helps organisations turn business intent and enterprise context into governed action across people, agents, and systems, and learn from every execution.",
+    body: "Evoq provides the harness that connects business intent and enterprise context to governed action across people, agents, and systems. Every execution becomes context for what follows.",
   },
   compounding: {
     id: "compounding",
@@ -43,27 +34,18 @@ export const home = {
   modes: {
     id: "modes",
     eyebrow: "Where enterprises start",
-    title: "Integrated execution approach with flexible entry points",
+    title: "Start where change matters most. Scale on one execution engine.",
     intro:
-      "Build what comes next, modernise what exists, and run what is critical through one integrated execution approach.",
-  },
-  stories: {
-    id: "stories",
-    eyebrow: "Client stories",
-    title: "Execution already running across create, transform, and operate.",
+      "Create what comes next, transform what exists, operate what is critical.",
   },
   close: {
     id: "close",
-    eyebrow: "Continue",
-    title: "See Evoq in the room that matters to you.",
     walkthrough: {
       title: "Book an executive walkthrough",
-      body: "For leaders ready to discuss a lived scenario in Create, Transform, or Operate.",
       cta: "Book a walkthrough",
     },
     deepDive: {
-      title: "Explore how execution works",
-      body: "For operators and technical leaders who want the operating logic behind Evoq.",
+      title: "Explore how evoq executes",
       cta: "How execution works",
     },
   },

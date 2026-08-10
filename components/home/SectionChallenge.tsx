@@ -34,20 +34,6 @@ export function SectionChallenge() {
           <Reveal delayMs={140}>
             <p className="mt-6 text-lg text-text-secondary md:text-xl">{s.body}</p>
           </Reveal>
-          <ul className="mt-8 space-y-3">
-            {s.points.map((point, i) => (
-              <Reveal key={point} delayMs={200 + i * 70}>
-                <li className="challenge-rule border-l-2 border-accent/40 pl-4 text-base text-text-secondary md:text-lg">
-                  {point}
-                </li>
-              </Reveal>
-            ))}
-          </ul>
-          <Reveal delayMs={460}>
-            <p className="display mt-10 max-w-md text-xl text-text-primary md:text-2xl">
-              {s.close}
-            </p>
-          </Reveal>
         </div>
 
         <div className="relative min-h-[22rem] w-full overflow-visible sm:min-h-[26rem] lg:min-h-[32rem]">

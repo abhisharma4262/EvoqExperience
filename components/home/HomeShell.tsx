@@ -4,7 +4,6 @@ import { SectionWork } from "@/components/home/SectionWork";
 import { SectionEvoq } from "@/components/home/SectionEvoq";
 import { SectionModes } from "@/components/home/SectionModes";
 import { SectionCompounding } from "@/components/home/SectionCompounding";
-import { SectionStories } from "@/components/home/SectionStories";
 import { SectionClose } from "@/components/home/SectionClose";
 
 export function HomeShell() {
@@ -23,7 +22,6 @@ export function HomeShell() {
       </div>
       <div id="story-next">
         <SectionCompounding />
-        <SectionStories />
         <SectionClose />
       </div>
     </main>

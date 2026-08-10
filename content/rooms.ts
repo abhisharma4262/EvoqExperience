@@ -22,7 +22,7 @@ export const rooms: Record<ModeId, RoomContent> = {
     quote: "We stopped briefing agencies and started briefing the work itself.",
     quoteAttribution: "Chief Digital Officer, global hotel group",
     sidecarIntro: "Three more ways EVOQ creates",
-    demoAriaLabel: "Create experience: request to production simulation",
+    demoAriaLabel: "Create archetypes: compositions for building with agents",
   },
   transform: {
     mode: "transform",
@@ -33,7 +33,7 @@ export const rooms: Record<ModeId, RoomContent> = {
     quote: "We walked in expecting a project. We walked out with a governed map.",
     quoteAttribution: "Chief Data Officer, retail bank",
     sidecarIntro: "Three more ways EVOQ transforms",
-    demoAriaLabel: "Transform experience: assessment compression simulation",
+    demoAriaLabel: "Transform archetypes: compositions for modernizing with agents",
   },
   operate: {
     mode: "operate",
@@ -44,6 +44,6 @@ export const rooms: Record<ModeId, RoomContent> = {
     quote: "Operations finally feels like a system, not a hero culture.",
     quoteAttribution: "Head of Claims, P&C insurer",
     sidecarIntro: "Three more ways EVOQ operates",
-    demoAriaLabel: "Operate experience: autonomous incident routing simulation",
+    demoAriaLabel: "Operate archetypes: compositions for running critical work",
   },
 };

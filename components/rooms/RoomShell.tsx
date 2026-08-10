@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -10,23 +9,8 @@ import { navigation } from "@/content/navigation";
 import type { ModeId } from "@/content/offerings";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { Button } from "@/components/ui/Button";
-import { RuntimeConsole } from "@/components/visuals/RuntimeConsole";
-import { SidecarStrip } from "@/components/rooms/SidecarStrip";
 import { RoomStoriesStrip } from "@/components/rooms/RoomStoriesStrip";
-
-const CreateDemo = dynamic(
-  () => import("@/components/demos/CreateDemo").then((m) => m.CreateDemo),
-  { ssr: false },
-);
-const TransformDemo = dynamic(
-  () =>
-    import("@/components/demos/TransformDemo").then((m) => m.TransformDemo),
-  { ssr: false },
-);
-const OperateDemo = dynamic(
-  () => import("@/components/demos/OperateDemo").then((m) => m.OperateDemo),
-  { ssr: false },
-);
+import { ModeArchetypeCatalog } from "@/components/rooms/ModeArchetypeCatalog";
 
 function homeHref(target: "modes" | "compounding") {
   if (target === "compounding") {
@@ -48,21 +32,10 @@ export function RoomShell({
 
   const leaveRoom = useCallback(
     (target: "modes" | "compounding" = "modes") => {
-      // ModalSlot clears stale intercepting overlays once pathname is "/".
       router.push(homeHref(target));
     },
     [router],
   );
-
-  function returnForward() {
-    if (mode === "create") {
-      router.push("/studio");
-      return;
-    }
-    leaveRoom(
-      orbit.returnTarget === "compounding" ? "compounding" : "modes",
-    );
-  }
 
   useEffect(() => {
     if (variant !== "overlay") return;
@@ -112,49 +85,9 @@ export function RoomShell({
           )}
         </div>
 
-        <section className="max-w-3xl space-y-4">
-          <h1 className="display text-[clamp(2rem,4.5vw,3.25rem)]">
-            {room.moment}
-          </h1>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2">
-            {room.oldWay.map((item) => (
-              <p key={item} className="text-text-muted">
-                {item}
-              </p>
-            ))}
-          </div>
-        </section>
-
-        <RuntimeConsole />
-
-        <section aria-label={room.demoAriaLabel} className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.16em] text-text-muted">
-            Inside the work
-          </p>
-          {mode === "create" ? <CreateDemo /> : null}
-          {mode === "transform" ? <TransformDemo /> : null}
-          {mode === "operate" ? <OperateDemo /> : null}
-        </section>
-
-        <section className="space-y-4 border-t border-accent-alt/15 pt-10">
-          <h2 className="display text-[clamp(1.75rem,3vw,2.5rem)]">
-            {room.outcome}
-          </h2>
-          <blockquote className="max-w-2xl text-lg text-text-secondary">
-            “{room.quote}”
-            <footer className="mt-3 text-sm text-text-muted">
-              {room.quoteAttribution}
-            </footer>
-          </blockquote>
-        </section>
-
-        <SidecarStrip mode={mode} />
+        <ModeArchetypeCatalog mode={mode} />
 
         <RoomStoriesStrip mode={mode} />
-
-        <Button type="button" size="lg" onClick={returnForward}>
-          {navigation.returnToJourney}
-        </Button>
       </div>
     </div>
   );

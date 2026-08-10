@@ -9,7 +9,7 @@ export const navigation = {
       "AI is changing how enterprises operate. Evoq makes enterprise knowledge executable so work gets done.",
     columns: [
       { label: "How execution works", href: "/runtime" },
-      { label: "Client stories", href: "/#section-stories" },
+      { label: "Where to start", href: "/#section-modes" },
       { label: "Contact", href: "/#section-close" },
     ],
     legal: [

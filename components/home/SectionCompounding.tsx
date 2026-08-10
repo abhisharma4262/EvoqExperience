@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { home } from "@/content/home";
 import { sectionAnchors } from "@/content/acts";
 import { Reveal } from "@/components/film/Reveal";
@@ -24,14 +23,6 @@ export function SectionCompounding() {
           </Reveal>
           <Reveal delayMs={150}>
             <p className="mt-6 max-w-2xl text-lg text-on-dark/75">{s.body}</p>
-          </Reveal>
-          <Reveal delayMs={220}>
-            <Link
-              href="/#section-stories"
-              className="mt-8 inline-block text-sm text-on-dark/70 link-sweep"
-            >
-              See client stories
-            </Link>
           </Reveal>
         </div>
         <div className="space-y-4">

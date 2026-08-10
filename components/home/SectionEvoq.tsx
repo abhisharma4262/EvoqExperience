@@ -18,25 +18,11 @@ export function SectionEvoq() {
               {s.eyebrow}
             </p>
           </Reveal>
-          <div className="mt-10 grid items-stretch gap-8 lg:grid-cols-[minmax(0,1.2fr)_auto_minmax(0,0.9fr)] lg:gap-0">
-            <Reveal delayMs={90} className="lg:pr-12 xl:pr-16">
-              <h2 className="display text-[clamp(1.85rem,3.8vw,3.1rem)] text-on-dark">
-                {s.needTitle}
-              </h2>
-            </Reveal>
-            <div
-              className="hidden w-px self-stretch bg-on-dark/25 lg:block"
-              aria-hidden
-            />
-            <Reveal
-              delayMs={160}
-              className="border-t border-on-dark/25 pt-8 lg:border-t-0 lg:pl-12 lg:pt-0 xl:pl-16"
-            >
-              <p className="flex h-full items-center text-xl text-on-dark/75 md:text-2xl">
-                {s.needBody}
-              </p>
-            </Reveal>
-          </div>
+          <Reveal delayMs={90}>
+            <h2 className="display mt-10 max-w-none text-[clamp(1.55rem,3vw,2.55rem)] text-on-dark">
+              {s.needTitle}
+            </h2>
+          </Reveal>
         </div>
       </div>
 

@@ -339,10 +339,10 @@ export function ExecutionContinuumFilm({ className }: { className?: string }) {
           </g>
         </g>
 
-        {/* ─── Act 3: One continuous execution challenge ─── */}
+        {/* ─── Act 3: Continuous execution ─── */}
         <g className="continuum-film__act continuum-film__act--3">
           <text x="320" y="44" textAnchor="middle" className="continuum-film__act-title">
-            One continuous execution challenge
+            Continuous execution
           </text>
 
           {/* Enterprise knowledge foundation */}
@@ -530,7 +530,7 @@ export function ExecutionContinuumFilm({ className }: { className?: string }) {
         Execution fragmented
       </p>
       <p className="continuum-film__endcap continuum-film__endcap--3">
-        One continuous execution challenge
+        New ways of working
       </p>
     </div>
   );

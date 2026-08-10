@@ -34,11 +34,6 @@ export function SectionWork() {
           <Reveal delayMs={140}>
             <p className="mt-6 text-lg text-text-secondary md:text-xl">{s.body}</p>
           </Reveal>
-          <Reveal delayMs={220}>
-            <p className="display mt-8 max-w-md text-xl text-text-primary md:text-2xl">
-              {s.close}
-            </p>
-          </Reveal>
         </div>
         <Reveal delayMs={120}>
           <ExecutionContinuumFilm />

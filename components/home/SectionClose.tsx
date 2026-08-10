@@ -13,26 +13,12 @@ export function SectionClose() {
 
   return (
     <section id={sectionAnchors.close} className="band-light film-section">
-      <div className="film-container space-y-12">
-        <div className="max-w-3xl">
-          <Reveal>
-            <p className="text-sm uppercase tracking-[0.18em] text-text-secondary">
-              {s.eyebrow}
-            </p>
-          </Reveal>
-          <Reveal delayMs={80}>
-            <h2 className="display mt-5 text-[clamp(2rem,4vw,3.25rem)]">
-              {s.title}
-            </h2>
-          </Reveal>
-        </div>
-
+      <div className="film-container">
         <div className="grid gap-10 md:grid-cols-2">
-          <Reveal delayMs={120}>
+          <Reveal>
             <div className="flex h-full flex-col justify-between gap-8 border-t border-accent-alt/20 pt-8">
               <div>
-                <h3 className="display text-2xl">{s.walkthrough.title}</h3>
-                <p className="mt-3 text-text-secondary">{s.walkthrough.body}</p>
+                <h2 className="display text-2xl">{s.walkthrough.title}</h2>
               </div>
               <Button
                 type="button"
@@ -44,11 +30,10 @@ export function SectionClose() {
               </Button>
             </div>
           </Reveal>
-          <Reveal delayMs={200}>
+          <Reveal delayMs={80}>
             <div className="flex h-full flex-col justify-between gap-8 border-t border-accent-alt/20 pt-8">
               <div>
-                <h3 className="display text-2xl">{s.deepDive.title}</h3>
-                <p className="mt-3 text-text-secondary">{s.deepDive.body}</p>
+                <h2 className="display text-2xl">{s.deepDive.title}</h2>
               </div>
               <Button asChild variant="secondary">
                 <Link href="/runtime">{s.deepDive.cta}</Link>
