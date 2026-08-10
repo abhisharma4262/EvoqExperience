@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="band-dark">
+    <footer className="band-dark border-t border-on-dark/10">
       <div className="film-container grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <BrandLogo

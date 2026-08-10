@@ -10,6 +10,7 @@ export const navigation = {
     columns: [
       { label: "How execution works", href: "/runtime" },
       { label: "Where to start", href: "/#section-modes" },
+      { label: "Evoq videos", href: "/launch" },
       { label: "Contact", href: "/#section-close" },
     ],
     legal: [

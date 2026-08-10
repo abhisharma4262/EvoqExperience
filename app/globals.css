@@ -4155,3 +4155,192 @@ button.aurora-glass__chip:hover {
   text-transform: uppercase;
   color: var(--color-accent-alt);
 }
+
+/* -- Evoq videos (launch) page ----------------------------- */
+.videos-page {
+  color: var(--color-on-dark);
+}
+
+.videos-page__shell {
+  min-height: 100vh;
+}
+
+.videos-page__glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.videos-page__glow--a {
+  top: -8%;
+  left: -10%;
+  width: min(52vw, 34rem);
+  height: min(52vw, 34rem);
+  background: color-mix(in srgb, var(--color-accent) 34%, transparent);
+  animation: videos-glow-a 12s var(--ease-out-expo) infinite alternate;
+}
+
+.videos-page__glow--b {
+  top: 18%;
+  right: -12%;
+  width: min(48vw, 30rem);
+  height: min(48vw, 30rem);
+  background: color-mix(in srgb, var(--color-accent-on-dark) 22%, transparent);
+  animation: videos-glow-b 14s var(--ease-out-expo) infinite alternate;
+}
+
+.videos-page__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.videos-page__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-on-dark) 14%, transparent);
+}
+
+.videos-page__tab {
+  position: relative;
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--color-on-dark) 52%, transparent);
+  transition:
+    color 280ms var(--ease-out-expo),
+    transform 280ms var(--ease-out-expo);
+}
+
+.videos-page__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-accent-on-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--ease-out-expo);
+}
+
+.videos-page__tab:hover,
+.videos-page__tab:focus-visible {
+  color: var(--color-on-dark);
+}
+
+.videos-page__tab--active {
+  color: var(--color-on-dark);
+}
+
+.videos-page__tab--active::after {
+  transform: scaleX(1);
+}
+
+.videos-page__theater {
+  width: 100%;
+  padding-inline: max(0px, calc((100% - min(100%, 80rem)) / 2));
+}
+
+.videos-page__stage {
+  position: relative;
+  overflow: hidden;
+  background: #061416;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-accent-on-dark) 18%, transparent),
+    0 40px 120px rgba(0, 0, 0, 0.45),
+    0 0 80px color-mix(in srgb, var(--color-accent) 16%, transparent);
+  animation: videos-stage-in 900ms var(--ease-out-expo) both;
+}
+
+.videos-page__stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.35);
+}
+
+.videos-page__loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: color-mix(in srgb, var(--color-on-dark) 65%, transparent);
+  font-size: 0.95rem;
+}
+
+.videos-page__loading-mark {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--color-accent-on-dark);
+  box-shadow: 0 0 18px var(--color-accent-on-dark);
+  animation: videos-pulse 1.4s var(--ease-out-expo) infinite;
+}
+
+@keyframes videos-glow-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(8%, 10%, 0) scale(1.12);
+    opacity: 0.9;
+  }
+}
+
+@keyframes videos-glow-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: translate3d(-10%, 8%, 0) scale(1.16);
+    opacity: 0.75;
+  }
+}
+
+@keyframes videos-stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes videos-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@media (min-width: 768px) {
+  .videos-page__stage {
+    border-radius: 0.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .videos-page__glow--a,
+  .videos-page__glow--b,
+  .videos-page__stage,
+  .videos-page__loading-mark {
+    animation: none !important;
+  }
+}

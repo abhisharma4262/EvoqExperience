@@ -9,12 +9,22 @@
     "lint": "eslint .",
     "check:contrast": "node scripts/check-contrast.mjs",
     "test:e2e": "playwright test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "remotion:studio": "remotion studio remotion/index.ts",
+    "remotion:render": "npm run remotion:render:home && npm run remotion:render:create && npm run remotion:render:transform && npm run remotion:render:operate",
+    "remotion:render:home": "remotion render remotion/index.ts HomeFilm out/videos/HomeFilm.mp4",
+    "remotion:render:create": "remotion render remotion/index.ts CreateLaunch out/videos/CreateLaunch.mp4",
+    "remotion:render:transform": "remotion render remotion/index.ts TransformLaunch out/videos/TransformLaunch.mp4",
+    "remotion:render:operate": "remotion render remotion/index.ts OperateLaunch out/videos/OperateLaunch.mp4"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.7.1",
     "@radix-ui/react-dialog": "^1.1.23",
     "@radix-ui/react-slot": "^1.3.3",
+    "@remotion/bundler": "^4.0.507",
+    "@remotion/cli": "^4.0.507",
+    "@remotion/player": "^4.0.507",
+    "@remotion/renderer": "^4.0.507",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.28.0",
@@ -23,6 +33,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.84.0",
+    "remotion": "^4.0.507",
     "tailwind-merge": "^3.6.0",
     "zod": "^4.4.3"
   },
